@@ -58,7 +58,7 @@ Num     Type           Disp Enb Address    What
 2       breakpoint     keep y   0x00401340 in main at test.c:2  
 ```  
 두개의 breakpoint가 서로 다른 곳에 걸린 것을 볼 수 있다.  
-b main 명령어는 함수의 스택프레임이 끝난 지점에서 breakpoint가 걸리게 되고
+b main 명령어는 함수의 스택프레임이 끝난 지점에서 breakpoint가 걸리게 되고  
 b *main 명령어는 함수의 스택프레임설정이 시작되는 지점에서 breakpoint가 걸리게 된다.  
 
 별(애스터리스크)하나로 breakpoint걸리는 지점이 다르게 변한다.  
