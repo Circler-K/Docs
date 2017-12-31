@@ -12,10 +12,10 @@
 - [Malwr](https://malwr.com) : Free, registration required, 2017-12-21현재 사이트 폐쇠, 재개 준비중
 - [Objective-See Collection](https://objective-see.com/malware.html) : Free, Mac malware
 - [Open Malware](http://openmalware.org) : Free
-- [Virussign](http://www.virusign.com) : Free
+- [Virussign](http://www.virusign.com) : Free, C2(C&C)서버 없음
 - [minotaur](http://minotauranalysis.com/exetweet/)
 - [Virusshare](https://virusshare.com) : Free
 - [secuboxlabs](http://secuboxlabs.fr)
 
 - [theZoo](ytisf.github.io/theZoo)   [http://thezoo.morirt.com] 로 둘 가 같다.
-- [Malware DB](http://thezoo.morirt.com)[http://thezoo.morirt.com] 로 둘 다 같다.
+- [Malware DB](http://thezoo.morirt.com)[http://thezoo.morirt.com] 로 둘 다 같다.	
