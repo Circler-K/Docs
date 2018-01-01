@@ -2,7 +2,7 @@
 <html>
   <head>
       <meta charset="utf-8" />
-      <title>register</title>
+      <title>virus-sharing-site</title>
       <style>.markdown-preview:not([data-use-github-style]) { padding: 2em; font-size: 1.2em; color: rgb(56, 58, 66); background-color: rgb(250, 250, 250); overflow: auto; }
 .markdown-preview:not([data-use-github-style]) > :first-child { margin-top: 0px; }
 .markdown-preview:not([data-use-github-style]) h1, .markdown-preview:not([data-use-github-style]) h2, .markdown-preview:not([data-use-github-style]) h3, .markdown-preview:not([data-use-github-style]) h4, .markdown-preview:not([data-use-github-style]) h5, .markdown-preview:not([data-use-github-style]) h6 { line-height: 1.2; margin-top: 1.5em; margin-bottom: 0.5em; color: rgb(0, 0, 0); }
@@ -529,222 +529,49 @@ pre.editor-colors .fold-marker:after {
 }
 </style>
   </head>
-  <body class='markdown-preview'><h1>IA-32 CPU &amp; Register</h1>
-<h4>리버싱 = Reverse Engineering</h4>
-<p><br><br><br></p>
-<h2>IA-32 register</h2>
-<blockquote>
-<p><strong>Intel Architecture 32 bit register</strong></p>
-</blockquote>
-<br>
+  <body class='markdown-preview'><h1>Virus sharing site</h1>
+<h2><strong>연구 목적으로 작성된 것이며, 악성코드 샘플은 반드시 학습목적으로만 사용하시길 바랍니다.</strong></h2>
+<h2><strong>악의적인 목적으로 사용할 시 발생할 수 있는 본인에게 있습니다.</strong></h2>
+<h2><strong>이는 해당 글을 열람할 때 동의하였다는 것을 의미 합니다.</strong></h2>
+<br>  
+<br>  
+<br>  
+<br>  
+<br>  
 <ul>
-<li>
-<p>Intel사에서 32bit 아키텍쳐에서 사용하는 레지스터를 말한다.<br>
-<br><br></p>
-</li>
-<li>
-<p>레지스터란 프로세서 안에 존재하는 저장 장치로, 메모리나 기억 장치보다 빠르게 동작한다.<br>
-그렇기 때문에 프로세서가 명령을 실행할 때에는 직접 메모리등을 조작하지 않고 메모리에서 레지스터로 읽어온 테이터로 조작하는 경우가 많다.<br>
-<br><br></p>
-</li>
-<li>
-<p>32bit 레지스터들은 앞에 E 가 붙는 것이 특징이다. <em>E 는 Extended의 약자이다.</em>
-<br>
-<br>
-<br></p>
-</li>
-</ul>
-<h3>범용 레지스터</h3>
-<br>
-<ul>
-<li>기본적으로는 어떻게 사용해도 문제는 없다.<br>
-그러나 각 레지스터는 통상적인 용도가 있기 때문에 함부로 사용하지는 않는다.<br>
+<li><strong><a href="https://www.virustotal.com/ko">Virustotal</a></strong> : 웹 백신, 멀웨어 정보 제공<br>
 <br></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th style="text-align:center">Full Name</th>
-<th>Use</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>EAX</td>
-<td style="text-align:center">Extended Accumulator Register</td>
-<td>연산 결과를 저장한다.</td>
-</tr>
-<tr>
-<td>ECX</td>
-<td style="text-align:center">Extended Counter Register</td>
-<td>루프 숫자 등의 카운트를 저장한다.</td>
-</tr>
-<tr>
-<td>EDX</td>
-<td style="text-align:center">Extended Data Register</td>
-<td>연산에 사용하는 데이터를 저장한다.</td>
-</tr>
-<tr>
-<td>EBX</td>
-<td style="text-align:center">Extended Base Register</td>
-<td>주소의 기본 값을 저장한다. <em>간접번지 지정시 사용된다. ex : [EBP+val_8]</em></td>
-</tr>
-<tr>
-<td>ESI</td>
-<td style="text-align:center">Extended Source Index Register</td>
-<td>복사 혹은 비교를 하는데 사용되는 Source 문자열을 나타낸다.</td>
-</tr>
-<tr>
-<td>EDI</td>
-<td style="text-align:center">Extended Destination Index Register</td>
-<td>복사 혹은 비교를 하는데 사용되는 Destination 문자열을 나타낸다.</td>
-</tr>
-</tbody>
-</table>
-<br>
-이 6개의 범용 레지스터중 EAX, ECX, EDX, EBX 레지스터의 하위 16bit 는 각각 AX, CX, DX, BX _(16bit 아키텍쳐에서 쓰던 범용 레지스터)_ 라고 하며 그 안에서도 상위 8bit는 AH, CH, DH, BH 레지스터, 하위 8bit는 AL, CL, DL, BL 레지스터라고 한다.  
-<p><br><br></p>
-<h5>EAX 구조</h5>
-<br>
-<p>|                    <strong>EAX</strong>                    |<br>
-|                       |         <strong>AX</strong>         |<br>
-|                       |   <strong>AH</strong>   |   <strong>AL</strong>    |</p>
-<br>
-<ul>
-<li>나머지 레지스터들도 같은 구조를 가진다.</li>
-</ul>
-<h3>포인터 레지스터 || 특수 레지스터</h3>
-<p><em>문서마다 표기한 이름이 다르다.</em></p>
-<ul>
-<li>
-<p>각각 전용 용도가 있다.</p>
-</li>
-<li>
-<p>프로그램을 실행하는 데 매우 중요한 역할을 하는 레지스터</p>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th style="text-align:center">Full Name</th>
-<th>Use</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ESP</td>
-<td style="text-align:center">Extended Stack Pointer</td>
-<td>현재 스택의 최상단 주소를 가리킨다.</td>
-</tr>
-<tr>
-<td>EBP</td>
-<td style="text-align:center">Extended Base Pointer</td>
-<td>Frame Pointer라고도 불리며 stack frame을 사용할 경우 현재 실행중 함수의 stack frame의 바닥을 가리킨다.</td>
-</tr>
-<tr>
-<td>EIP</td>
-<td style="text-align:center">Extended Instruction Pointer</td>
-<td>다음에 실행할 어셈블리 명령주소를 가리킨다.</td>
-</tr>
-<tr>
-<td>EFL</td>
-<td style="text-align:center">Eflags Register</td>
-<td>연산의 결과 및 시스템 제어를 위한 정보가 각각 배정되어 있다.</td>
-</tr>
-</tbody>
-</table>
-<p><strong>여기서 Eflags Register에 대해 좀 더 자세히 알아보자.</strong></p>
-<ul>
-<li>
-<p>Eflags 에는 17개의 플래그가 저장된다.</p>
-</li>
-<li>
-<p>각각의 플래그들은 어셈블리 명령어들을 수행할 때 조건을 판별하는 중요한 역할을 한다.</p>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th style="text-align:center">Full Name</th>
-<th>Use</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CF</td>
-<td style="text-align:center">Carry Flag</td>
-<td>연산 명령으로 자리올림이나 부호변경이 발생할 때 설정(1)된다.</td>
-</tr>
-<tr>
-<td>ZF</td>
-<td style="text-align:center">Zero Flag</td>
-<td>연산 결과가 0이 되는경우 설정(1)된다. 아닐 때는 해제(0)된다.</td>
-</tr>
-<tr>
-<td>SF</td>
-<td style="text-align:center">Sign Flag</td>
-<td>연산 결과가 음수가 될 때 설정(1)된다. 양수일때는 해제된다.</td>
-</tr>
-<tr>
-<td>OF</td>
-<td style="text-align:center">Overflow Flag</td>
-<td>부호피 연산자가 부호 있는 정수라는 가정하에 &quot;연산결과값&quot;이 &quot;결과값이 들어갈 피 연산자의 범위&quot;를 벗어났을 때 설정된다.</td>
-</tr>
-</tbody>
-</table>
-<h3>세그먼트 레지스터</h3>
-<ul>
-<li>
-<p>세그먼트의 주소를 참조하는 데 사용하는 레지스터이다.</p>
-</li>
-<li>
-<p>세그먼트란 메모리를 관리하기 위해 데이터의 종류에 따라 영역을 구분하여 저장하는 곳이다.</p>
-</li>
-</ul>
-<br>
-<br>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th style="text-align:center">Full Name</th>
-<th>Use</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CS</td>
-<td style="text-align:center">Code Segment Register</td>
-<td>코드 세그먼트의 주소를 저장한다.<br>Instruction Pointer 레지스터가 가진 offset값과 합쳐서 실행을위한 명령어 주소를 참조하게 된다.</td>
-</tr>
-<tr>
-<td>DS</td>
-<td style="text-align:center">Data Segment Register</td>
-<td>데이터 세그먼트의 주소를 저장한다.<br>AX,CX,DX,SI,DI레지스터와 합쳐서 데이터 영역의 주소를 참조하게된다</td>
-</tr>
-<tr>
-<td>SS</td>
-<td style="text-align:center">Stack Segment Register</td>
-<td>스택 세그먼트의 주소를 저장한다. <br> SP , BP 레지스터와 합쳐서 스택영역의 주소를 참조하게된다</td>
-</tr>
-<tr>
-<td>ES</td>
-<td style="text-align:center">Extra Segment Register</td>
-<td>보조 세그먼트의 주소를 저장한다. <br> <em>일반적으로는 문자열 관련 처리를 수행하는데 사용된다.</em></td>
-</tr>
-<tr>
-<td>FS</td>
-<td style="text-align:center">F Segment Register</td>
-<td>기억 장소 요구사항을 처리하기 위해 80386 아키텍쳐에서 추가로 도입된 세그먼트 레지스터이다.</td>
-</tr>
-<tr>
-<td>GS</td>
-<td style="text-align:center">G Segment Register</td>
-<td>기억 장소 요구사항을 처리하기 위해 80386 아키텍쳐에서 추가로 도입된 세그먼트 레지스터이다.</td>
-</tr>
-</tbody>
-</table></body>
+<li><strong><a href="https://github.com/MISP/MISP">MIPS</a></strong> : 멀웨어 공유 플랫폼,<br>
+<br></li>
+<li><strong><a href="http://contagiodump.blogspot.kr">Contagio Malware Dump</a></strong> : 비밀번호 필요함, <a href="http://contagiodump.blogspot.kr/2010/11/links-and-resources-for-malware-samples.html">More</a><br>
+<br></li>
+<li><strong><a href="http://dasmalwerk.eu">Das Malwerk</a></strong><br>
+<br></li>
+<li><strong><a href="http://www.freetrojanbotnet.com">FreeTrojanBotnet</a></strong><br>
+<br></li>
+<li><strong><a href="http://www.kernelmode.info/forum/viewforum.php?f=16">KernelMode.info</a></strong> : 주로 OS에 관련된 것이 많다.<br>
+<br></li>
+<li><strong><a href="http://malshare.com">MalShare</a></strong> : <a href="http://malshare.com/daily/">여기까지</a> 들어가면 해시값들 주는데 알고리즘 이름 안붙어있는거는 뭔지 모름, 따로 파싱안해도 API로 정보 제공<br>
+<br></li>
+<li><strong><a href="https://avcaesar.malware.lu">Malware.lu’s AVCaesar</a></strong> : 폐쇄<br>
+<br></li>
+<li><strong><a href="http://www.malwareblacklist.com/showMDL.php">MalwareBlacklist</a></strong> : Free, registration required<br>
+<br></li>
+<li><strong><a href="https://malwr.com">Malwr</a></strong> : Free, registration required, 2017-12-21현재 사이트 폐쇠, 재개 준비중<br>
+<br></li>
+<li><strong><a href="https://objective-see.com/malware.html">Objective-See Collection</a></strong> : Free, Mac malware<br>
+<br></li>
+<li><strong><a href="http://openmalware.org">Open Malware</a></strong> : Free<br>
+<br></li>
+<li><strong><a href="http://www.virusign.com">Virussign</a></strong> : Free, C2(C&amp;C)서버 없음<br>
+<br></li>
+<li><strong><a href="http://minotauranalysis.com/exetweet/">minotaur</a></strong><br>
+<br></li>
+<li><strong><a href="https://virusshare.com">Virusshare</a></strong> : Free<br>
+<br></li>
+<li><strong><a href="http://secuboxlabs.fr">secuboxlabs</a></strong><br>
+<br></li>
+<li><strong><a href="ytisf.github.io/theZoo">theZoo</a></strong> : [<a href="http://thezoo.morirt.com">http://thezoo.morirt.com</a>] 로 둘 가 같다.</li>
+<li><strong><a href="http://thezoo.morirt.com">Malware DB</a></strong> :[<a href="http://thezoo.morirt.com">http://thezoo.morirt.com</a>] 로 둘 다 같다.</li>
+</ul></body>
 </html>
