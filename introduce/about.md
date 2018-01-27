@@ -22,7 +22,7 @@
 
 - PHP 시큐어코딩을 위한 PHP-user-info-module(login, logout, register기능)모듈 제작 [PHP-user-info-module](https://github.com/Circler-K/PHP-user-info-module)  
 
-- 웹하드 프로젝트중  
+- 웹하드 기초 [Web-Hard](https://github.com/Circler-K/Web-Hard)
 
 - Python 게임제작중
 
