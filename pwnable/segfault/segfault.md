@@ -4,8 +4,8 @@
 > segmentation fault (core dumped)
 
    라는 메시지를 띄우며 코어파일을 생성한다.
-  
-- 그러나 항상 띄우는 것이 아니다. 
+
+- 그러나 항상 띄우는 것이 아니다.
 ```c
 /*
         The Lord of the BOF : The Fellowship of the BOF
@@ -27,13 +27,14 @@ int main(int argc, char *argv[])
 ```
 
 - 이러한 코드가 있다. 그러면 스택에는
+
 | 높은주소 |
 |-|
 |buffer[16]|
 |SFP|
 |RET|
 
-이런식으로 자리를 잡게 된다. 여기서 buffer의 크기보다 입력된 값의 크기가 더 크면 BOF가 일어나게 된다. 
+이런식으로 자리를 잡게 된다. 여기서 buffer의 크기보다 입력된 값의 크기가 더 크면 BOF가 일어나게 된다.
 입력한 값이 16byte의 버퍼를 채우면 정상적으로 종료된다.
 입력한 값이 16byte를 넘어가게 되면 어떤일이 일어나는지 gdb를 사용하여 알아보았다.
 
@@ -127,9 +128,9 @@ Breakpoint 1, 0x8048468 in main ()
 ```
 - HEX값으로 전달해도 0x00이 들어간다.
 
- 
+
 ## Why?
 
 - 32bit운영체제를 기준으로 buffer가 16byte일 때 20byte의 문자열을 입력하게 되면 0x00까지 포함하여 사실상 21byte를 채우는 것으로 보인다.
- 그러면 buffer 16byte를 채우고 sfp 4byte, RET 1byte를 침범한다.
+- 그러면 buffer 16byte를 채우고 sfp 4byte, RET 1byte를 침범한다.  
 문자열의 끝값을 나타내는 0x00값이 RET주소를 침범하게 되어 segmentation fault를 띄우고 core를 생성하는 듯 하다.

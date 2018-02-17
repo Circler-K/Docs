@@ -559,13 +559,26 @@ pre.editor-colors .fold-marker:after {
 </div><div class="line"><span class="syntax--source syntax--c"><span>&nbsp;</span></span>
 </div></pre>
 <ul>
-<li>이러한 코드가 있다. 그러면 스택에는
-| 높은주소 |
-|-|
-|buffer[16]|
-|SFP|
-|RET|</li>
+<li>이러한 코드가 있다. 그러면 스택에는</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>높은주소</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>buffer[16]</td>
+</tr>
+<tr>
+<td>SFP</td>
+</tr>
+<tr>
+<td>RET</td>
+</tr>
+</tbody>
+</table>
 <p>이런식으로 자리를 잡게 된다. 여기서 buffer의 크기보다 입력된 값의 크기가 더 크면 BOF가 일어나게 된다.
 입력한 값이 16byte의 버퍼를 채우면 정상적으로 종료된다.
 입력한 값이 16byte를 넘어가게 되면 어떤일이 일어나는지 gdb를 사용하여 알아보았다.</p>
