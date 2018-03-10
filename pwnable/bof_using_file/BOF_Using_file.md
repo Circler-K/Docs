@@ -39,3 +39,6 @@ logout
 
 
 - Like this?
+
+
+https://stackoverflow.com/questions/11900578/how-execute-cat-filename-in-python
