@@ -5,9 +5,12 @@ int sub(){
 	int d;
 	int f;
 }
-int main(){n
-	int a=1;
-	int s=2;
-	sub();
+int main(){
+	int *a;
+	int s;
+	a=&s;
+	printf("%x\n",a);
+	printf("%d",sizeof(a));
+	
 	return 0;
 }
