@@ -25,6 +25,7 @@
 - 2018 Volatility Analysis Contest 2nd : [volatility blog](https://volatility-labs.blogspot.com/2018/11/results-from-annual-2018-volatility-contests.html)
 - 2018 교내 정보보안 경진대회 은상 (2등)
 - 2019 Codegate prequel 11th, final 20th
+- 2019 Codegate Junior_Session Speaker for \[Assembly In Web? In (Web) Browser, WebAssembly\]
 - Best of the Best 7th 보안제품개발트랙 수료생
 
 ### 프로젝트
