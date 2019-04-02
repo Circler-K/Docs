@@ -1,24 +1,31 @@
 # Circler
 ### 인적사항
 - 18세
-- 선린인터넷고등학교 정보통신과 2학년  
+- 선린인터넷고등학교 정보통신과 3학년  
+- 교내 프로그래밍 동아리 Unifox에서 활동
 
 - 주 분야 : 웹 개발, 웹 보안, Problem Solving(알고리즘)
 - 관심있는 분야 : 시스템 보안(포너블, 리버싱), 시큐어코딩, 언어처리
 - 깃허브 주소 : [Circler-K](https://github.com/Circler-K)
-- 개인 홈페이지 : [Circler](http://circler.dothome.co.kr)
+<!-- - 개인 홈페이지 : [Circler](http://circler.dothome.co.kr) -->
 ### 경력
-- 교내 영어 경시대회 동상
-- 교내 프로그래밍 경시대회 은상
-- 교내 천하제일코딩대회 동상
-- 전국 ICT창의성경시대회 프로그래밍 전문가 부문 은상  
-- 서울특별시 IT창의성대회 프로그래밍 전문가 부문 동상
-- 제 2회 국민대학교 알고리즘 대회 장려상
-- 17회 Hacking Camp CTF 1등 (칠성사이다조)
-- 제 1회 컴퓨팅사고능력 경진대회 장려상
+- 2017 교내 영어 경시대회 동상
+- 2017 교내 프로그래밍 경시대회 은상
+- 2017 교내 천하제일코딩대회 동상
+- 2017 전국 ICT창의성경시대회 프로그래밍 전문가 부문 은상  
+- 2017 서울특별시 IT창의성대회 프로그래밍 전문가 부문 동상
+- 2017 제 2회 국민대학교 알고리즘 대회 장려상
+- 2018 17회 Hacking Camp CTF 1등 (칠성사이다조)
+- 2018 제 1회 컴퓨팅사고능력 경진대회 장려상
+- 2018 서울특별시 IT창의성대회 프로그래밍 전문가 부문 동상
+- 2018 전국 ICT창의성경시대회 프로그래밍 전문가 부문 장려상
 - 2018 교내 해킹방어대회 동상
-- 제 16회 순천향대학교 청소년 정보보호 페스티벌 예선 15위, 본선 진출  
-- Best of the Best 7th 보안제품개발트랙 교육생
+- 2018 정보보호해커톤 본선 (3^3+1days later)
+- 2018 제 16회 순천향대학교 청소년 정보보호 페스티벌(YISF) 예선 15위, 본선 진출  
+- 2018 Volatility Analysis Contest 2nd : [volatility blog](https://volatility-labs.blogspot.com/2018/11/results-from-annual-2018-volatility-contests.html)
+- 2018 교내 정보보안 경진대회 은상 (2등)
+- 2019 Codegate prequel 11th, final 20th
+- Best of the Best 7th 보안제품개발트랙 수료생
 
 ### 프로젝트
 - Character Editor for Window [Cirtex](https://github.com/Circler-K/CirTex)   (https://github.com/Circler-K/CirTex)  
@@ -35,15 +42,5 @@
   - 토큰 분리 및 파싱
   - 연산 구현  
 
-
-### 보유 기술
-##### Programing
-- C
-- PHP
-- Python, django
-- Java
-##### Hacking
-- Web
-### 자격증
-- 정보처리기능사 보유
-- OCJP 준비중
+- 2018 Volatility Analysis Contest 2nd : [volatility blog](https://volatility-labs.blogspot.com/2018/11/results-from-annual-2018-volatility-contests.html)  
+(https://volatility-labs.blogspot.com/2018/11/results-from-annual-2018-volatility-contests.html)
